@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fauzan Gusmirawan | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: #111827;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      background-color: #00c6a7;
+      color: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 22px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .toggle-theme {
+      border: none;
+      background: transparent;
+      font-size: 22px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* HEADER / ABOUT */
+    header {
+      background: linear-gradient(90deg, #00c6a7, #1cefff);
+      color: white;
+      padding: 120px 20px 60px;
+      text-align: center;
+    }
+
+    header img {
+     width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 4px solid white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    display: block;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    }
+
+    header h1 {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 80px;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #00c6a7;
+    }
+
+    /* PROJECT SECTION */
+    .projects {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .project-card {
+      background: #1f2937;
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      width: 70%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: scale(1.02);
+    }
+
+    .project-card h3 {
+      color: #22d3ee;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      margin-bottom: 15px;
+      color: #d1d5db;
+    }
+
+    .btn {
+        background: #00c6a7;
+        color: white;
+        border: none;
+        padding: 12px 32px; /* lebih besar dari sebelumnya */
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 15px; /* sedikit lebih besar */
+        cursor: pointer;
+        transition: 0.3s;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    .btn:hover {
+      background: #10b981;
+    }
+
+    /* SKILL SECTION */
+    .skills {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .skill-item {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-item h3 {
+      color: #00c6a7;
+    }
+
+    /* CONTACT SECTION */
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      font-family: 'Poppins';
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #00c6a7;
+    }
+
+    /* DARK MODE */
+    body.dark {
+      background-color: #0f172a;
+      color: #e5e7eb;
+    }
+
+    body.dark nav {
+      background-color: #111827;
+    }
+
+    body.dark header {
+      background: linear-gradient(90deg, #059669, #10b981);
+    }
+
+    body.dark .skill-item {
+      background: #1f2937;
+      color: #e5e7eb;
+    }
+
+    body.dark .project-card {
+      background: #111827;
+      color: #fff;
+    }
+
+    body.dark input, body.dark textarea {
+      background: #1f2937;
+      color: #fff;
+      border-color: #374151;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+    .demo{
+        padding: auto;
+        width: 30vw;
+        height: 10vh;
+    }
+    .gambar-project{
+      width: 200px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">FAUZAN</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skill</a></li>
+      <li><a href="#projects">Project</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="toggle-theme" id="themeToggle">🌞</button>
+  </nav>
+
+  <header id="about">
+    <img class="Profil" src="Profil.jpg" alt="Foto Profil"/>
+    <h1>Fauzan Gusmirawan</h1>
+    <p>
+      Perkenalkan, saya <b>Fauzan Gusmirawan</b>, mahasiswa aktif di 
+      <b>Politeknik Negeri Madiun</b>. Saya memiliki minat dalam bidang 
+      rekayasa perangkat lunak, desain web, serta pengembangan aplikasi 
+      berbasis teknologi modern. Tujuan saya adalah menjadi seorang profesional 
+      yang tidak hanya memahami teori, tetapi juga mampu menerapkannya dalam 
+      dunia industri secara nyata.
+    </p>
+  </header>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills">
+      <div class="skill-item"><h3>HTML</h3><p>Advanced</p></div>
+      <div class="skill-item"><h3>CSS</h3><p>Intermediate</p></div>
+      <div class="skill-item"><h3>JavaScript</h3><p>Intermediate</p></div>
+      <div class="skill-item"><h3>Python</h3><p>Basic</p></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Project 1: Website Pribadi</h3>
+        <img src="./gambar_berita.png" alt="gambar 1" class="gambar-project">
+        <p>Portal Berita Sederhana</p>
+        <a class="btn" href="https://lamanberita.zya.me/login.php" target="_blank">lihat</a>
+        <p class="demo">demo akun user username = 123  password = 123<br>demo akun admin username = fajar password = 123</br></p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form onsubmit="sendMessage(event)">
+      <input type="text" placeholder="Nama Anda" required />
+      <input type="email" placeholder="Email Anda" required />
+      <textarea rows="4" placeholder="Pesan Anda..." required></textarea>
+      <button type="submit" class="btn">Kirim Pesan</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Fauzan Gusmirawan. All rights reserved.
+  </footer>
+
+  <script>
+    // Tombol mode gelap / terang
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '🌙' : '🌞';
+    });
+
+    // Form pesan
+    function sendMessage(e) {
+      e.preventDefault();
+      alert('Pesan berhasil dikirim!');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
